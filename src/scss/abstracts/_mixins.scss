@@ -2,8 +2,9 @@
   margin: 0 auto;
 }
 
-@mixin flex{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@mixin display($display, $justify, $align, $gap){
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
 }

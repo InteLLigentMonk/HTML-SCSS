@@ -16,10 +16,12 @@ body{
 h1{
   font-size: map-get(a.$Heading-font-sizes , 1);
   font-weight: map-get(a.$Font-weight , extrabold);
+  color: a.$clr-heading;
 }
 h2{
   font-size: map-get(a.$Heading-font-sizes , 2);
   font-weight: map-get(a.$Font-weight , extrabold);
+  color: a.$clr-heading;
 }
 h3{
   font-size: map-get(a.$Heading-font-sizes , 3);
