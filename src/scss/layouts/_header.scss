@@ -1,4 +1,6 @@
 @use '../abstracts/' as a;
+@use 'sass:map';
+
 header{
   @include a.margin-auto;
   padding: 1rem;
@@ -7,12 +9,50 @@ header{
 }
 .logo{
   @include a.display(flex, left, center, 0.5rem);
-
-  .features{
-    margin-left: 2rem;
-  }
 }
+
+.features{
+  display: none;
+  margin-left: 2rem;
+}
+
 nav{
   grid-column: -1;
-  @include a.display(flex, right, center, 1rem);
+  @include a.display(flex, right, center, 2rem);
+}
+
+label[for="dark-toggle"]{
+  font-weight: map-get(a.$Font-weight, bold);
+  display: none;
+}
+
+.btn-s{
+  display: none;
+}
+
+@media(width > 768px){
+  header{
+    max-width: 720px;
+  }
+  label[for="dark-toggle"]{
+    display: inline;
+  }
+}
+
+@media(width > 1200px){
+  header{
+    max-width: 1140px;
+  }
+  .hamburger{
+    display: none;
+  }
+  .features{
+    display: block;
+  }
+  .btn-s{
+    display: block;
+  }
+  label[for="dark-toggle"]{
+    display: inline;
+  }
 }

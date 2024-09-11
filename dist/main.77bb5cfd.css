@@ -237,6 +237,59 @@ h6 {
   font-size: 1.3rem;
 }
 
+/* Toggle Slider */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.8rem;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(231, 14%, 63%);
+  box-shadow: 0 0.4rem 1.3rem hsl(231, 14%, 63%);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  left: 0.3rem;
+  bottom: 0.3rem;
+  background-color: hsl(0, 0%, 100%);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(239, 84%, 67%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.2rem);
+}
+
+.slider.round {
+  border-radius: 0.9rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 header {
   margin: 0 auto;
   padding: 1rem;
@@ -250,7 +303,9 @@ header {
   align-items: center;
   gap: 0.5rem;
 }
-.logo .features {
+
+.features {
+  display: none;
   margin-left: 2rem;
 }
 
@@ -259,7 +314,42 @@ nav {
   display: flex;
   justify-content: right;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+label[for=dark-toggle] {
+  font-weight: 700;
+  display: none;
+}
+
+.btn-s {
+  display: none;
+}
+
+@media (width > 768px) {
+  header {
+    max-width: 720px;
+  }
+  label[for=dark-toggle] {
+    display: inline;
+  }
+}
+@media (width > 1200px) {
+  header {
+    max-width: 1140px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .features {
+    display: block;
+  }
+  .btn-s {
+    display: block;
+  }
+  label[for=dark-toggle] {
+    display: inline;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

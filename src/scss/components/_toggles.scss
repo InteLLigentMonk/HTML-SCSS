@@ -1,0 +1,54 @@
+
+@use '../abstracts/' as a;
+
+/* Toggle Slider */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.8rem;
+}
+
+.toggle input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: a.$clr-muted;
+  box-shadow: 0 .4rem 1.3rem a.$clr-muted;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  left: .3rem;
+  bottom: .3rem;
+  background-color: a.$clr-base;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: a.$primary;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.2rem);
+}
+
+.slider.round {
+  border-radius: .9rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
