@@ -1,0 +1,38 @@
+// Grayscale
+$white: hsl(0, 0%, 100%);
+$gray-100: hsl(225, 100%, 98%);
+$gray-200: hsl(226, 68%, 96%);
+$gray-300: hsl(228, 35%, 92%);
+$gray-400: hsl(229, 25%, 86%);
+$gray-500: hsl(231, 16%, 75%);
+$gray-600: hsl(231, 14%, 63%);
+$gray-700: hsl(234, 14%, 39%);
+$gray-800: hsl(235, 20%, 25%);
+$gray-900: hsl(223, 39%, 7%);
+$black: hsl(0, 0%, 0%);
+
+// Base colors
+$clr-base: $white;
+$clr-background: $gray-100;
+$clr-secondary: $gray-200;
+$clr-divider: $gray-300;
+$clr-border: $gray-400;
+$clr-placeholder: $gray-500;
+$clr-muted: $gray-600;
+$clr-body-text: $gray-700;
+$clr-navigation: $gray-800;
+$clr-heading: $gray-900;
+
+
+// Brand
+$primary: hsl(239, 84%, 67%);
+$gradient-1: $primary;
+$gradient-2: hsl(258, 90%, 66%);
+$gradient-3: hsl(292, 84%, 61%);
+
+
+// System
+$sys-error: #EF4444;
+$sys-success: #22C55E;
+$sys-warning: #FFBA08;
+$sys-info: #4C82F7;

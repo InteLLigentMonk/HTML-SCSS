@@ -1,0 +1,72 @@
+@use '../abstracts/colors' as c;
+@use '../abstracts/variables' as v;
+
+.btn-s{
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 0.56em 1.25em;
+  margin: 0;
+  border-radius: 0.25em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.1rem;
+
+}
+
+.btn-m{
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 0.68em 1.75em;
+  margin: 0;
+  border-radius: 0.375em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.btn-l{
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 0.8em 2em;
+  margin: 0;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.btn-primary{
+  color: c.$clr-background;
+  background-color: c.$primary;
+}
+
+.btn-store{
+  color: c.$clr-background;
+  background-color: c.$clr-heading;
+  img{
+    height: 100%;
+    object-fit: contain;
+  }
+  &-text{
+    small{
+      display:block;
+    }
+    small:nth-child(1){
+      font-weight:400;
+      font-size: .6rem;
+    }
+    small:nth-child(2){
+      font-weight:500;
+      font-size: 1.3rem;
+    }
+  }
+}
