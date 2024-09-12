@@ -27,7 +27,6 @@
   border-radius: 0.375em;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 160%;
 }
 
 .btn-l{
@@ -41,7 +40,6 @@
   border-radius: 0.5em;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 160%;
 }
 
 .btn-primary{
@@ -52,6 +50,7 @@
 .btn-store{
   color: c.$clr-background;
   background-color: c.$clr-heading;
+  height: 3.25rem;
   img{
     height: 100%;
     object-fit: contain;

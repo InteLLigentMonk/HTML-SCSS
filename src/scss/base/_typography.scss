@@ -13,57 +13,50 @@ body{
 }
 
 /* Heading text styling */
-h1{
-  font-size: map-get(a.$Heading-font-sizes , 1);
+h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3,
+ .display-4, .display-5, .display-6{
   font-weight: map-get(a.$Font-weight , extrabold);
   color: a.$clr-heading;
+  line-height: 130%;
+ }
+
+h1{
+  font-size: map-get(a.$Heading-font-sizes , 1);
 }
 h2{
   font-size: map-get(a.$Heading-font-sizes , 2);
-  font-weight: map-get(a.$Font-weight , extrabold);
-  color: a.$clr-heading;
 }
 h3{
   font-size: map-get(a.$Heading-font-sizes , 3);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 h4{
   font-size: map-get(a.$Heading-font-sizes , 4);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 h5{
   font-size: map-get(a.$Heading-font-sizes , 5);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 h6{
   font-size: map-get(a.$Heading-font-sizes , 6);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 
 /* Display Text styling */
 .display-1{
   font-size: map-get(a.$Display-font-sizes , 1);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .display-2{
   font-size: map-get(a.$Display-font-sizes , 2);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .display-3{
   font-size: map-get(a.$Display-font-sizes , 3);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .display-4{
   font-size: map-get(a.$Display-font-sizes , 4);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .display-5{
   font-size: map-get(a.$Display-font-sizes , 5);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .display-6{
   font-size: map-get(a.$Display-font-sizes , 6);
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 
 /* Body text styling */

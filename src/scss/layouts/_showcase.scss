@@ -1,0 +1,147 @@
+@use '../abstracts/' as a;
+
+
+.showcase-container{
+  background: radial-gradient(circle at center bottom, rgba(a.$primary, .15) 0%, rgba(a.$gradient-2, .1) 42%, rgba(a.$gradient-3, .0) 83%);
+}
+
+.showcase{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.appstore{
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+
+}
+
+.discover-more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobiles{
+  display: none;
+  img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+
+
+@media (min-width: 768px){
+
+  .btn-store{
+    width: 50%;
+    padding: .5rem .3rem;
+  }
+
+  .btn-store-text{
+    small{
+      display:block;
+    }
+    small:nth-child(1){
+      font-weight:400;
+      font-size: .5rem;
+    }
+    small:nth-child(2){
+      font-weight:500;
+      font-size: .8rem;
+    }
+  }
+  .showcase{
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 1rem;
+    grid-template-columns: repeat(12, minmax(0 ,1fr));
+  }
+  .showcase .display-4{
+    grid-column: 1 / 13;
+    margin: 2rem 0;
+  }
+  .showcase-text{
+    grid-column: 1 / 6;
+    grid-row: 3 / 4;
+    text-align: left;
+    line-height: 1.8rem;
+  }
+  .appstore{
+    grid-column: 1 /6;
+    grid-row: 4 / 5;
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+
+  }
+  .discover-more{
+    grid-column: 1 /6;
+    grid-row: 5 / 6;
+    justify-content: left;
+  }
+  .mobiles{
+    display: flex;
+    align-items: end;
+    grid-column: 5 / 13;
+    grid-row: 2 / 7;
+  }
+}
+
+@media (min-width: 1200px){
+  .btn-store{
+    padding: .5rem .5rem;
+  }
+  
+  .btn-store-text{
+    small{
+      display:block;
+    }
+    small:nth-child(1){
+      font-weight:400;
+      font-size: .6rem;
+    }
+    small:nth-child(2){
+      font-weight:500;
+      font-size: 1.3rem;
+    }
+  }
+
+  .showcase{
+  margin: 0 auto;
+  max-width: 1140px;
+  }
+  
+  .showcase .display-4{
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    font-size: 3.5rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  .discover-more{
+    grid-column: 1 /6;
+    grid-row: 6 / 7;
+    justify-content: left;
+    margin: 3rem 0;
+  }
+
+  .mobiles{
+    padding-top: 5rem;
+    display: flex;
+    align-items: flex-end;
+    grid-column: 6 / 13;
+    grid-row: 1/ 7;
+  }
+
+}
