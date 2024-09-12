@@ -1,0 +1,28 @@
+@use '../abstracts/' as *;
+@use 'sass:map';
+
+body:has(#dark-toggle:checked){
+  --clr-base: #{$gray-900};
+  --clr-background: #{$black};
+  --clr-divider: #{$gray-800};
+  --clr-heading: #{$white};
+  --clr-body-text: #{$white};
+  #apple{
+    filter: invert(.8);
+  }
+  .btn-round{
+    background-color: rgba(255, 255, 255, .05);
+  }
+
+  .btn-store{
+    font-weight: map-get($Font-weight , extrabold);
+  }
+  .navigation-text{
+    color: $white;
+      
+    &:hover{
+      color: $primary;
+    }
+  }
+
+}

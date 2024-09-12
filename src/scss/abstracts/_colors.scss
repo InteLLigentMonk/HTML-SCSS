@@ -23,6 +23,19 @@ $clr-body-text: $gray-700;
 $clr-navigation: $gray-800;
 $clr-heading: $gray-900;
 
+:root{
+  --clr-base: #{$clr-base};
+  --clr-background: #{$clr-background};
+  --clr-secondary: #{$clr-secondary};
+  --clr-divider: #{$clr-divider};
+  --clr-border: #{$clr-border};
+  --clr-placeholder: #{$clr-placeholder};
+  --clr-muted: #{$clr-muted};
+  --clr-body-text: #{$clr-body-text};
+  --clr-navigation: #{$clr-navigation};
+  --clr-heading: #{$clr-heading};
+}
+
 
 // Brand
 $primary: hsl(239, 84%, 67%);

@@ -53,12 +53,25 @@ table {
   border-spacing: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
+}
+
+:root {
+  --clr-base: hsl(0, 0%, 100%);
+  --clr-background: hsl(225, 100%, 98%);
+  --clr-secondary: hsl(226, 68%, 96%);
+  --clr-divider: hsl(228, 35%, 92%);
+  --clr-border: hsl(229, 25%, 86%);
+  --clr-placeholder: hsl(231, 16%, 75%);
+  --clr-muted: hsl(231, 14%, 63%);
+  --clr-body-text: hsl(234, 14%, 39%);
+  --clr-navigation: hsl(235, 20%, 25%);
+  --clr-heading: hsl(223, 39%, 7%);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -66,15 +79,15 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 160%;
-  color: hsl(234, 14%, 39%);
-  background-color: hsl(0, 0%, 100%);
+  color: var(--clr-body-text);
+  background-color: var(--clr-base);
 }
 
 /* Heading text styling */
 h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3,
 .display-4, .display-5, .display-6 {
   font-weight: 800;
-  color: hsl(223, 39%, 7%);
+  color: var(--clr-heading);
   line-height: 130%;
 }
 
@@ -167,44 +180,62 @@ h6 {
   color: hsl(239, 84%, 67%);
 }
 
-.btn-s {
+body:has(#dark-toggle:checked) {
+  --clr-base: hsl(223, 39%, 7%);
+  --clr-background: hsl(0, 0%, 0%);
+  --clr-divider: hsl(235, 20%, 25%);
+  --clr-heading: hsl(0, 0%, 100%);
+  --clr-body-text: hsl(0, 0%, 100%);
+}
+body:has(#dark-toggle:checked) #apple {
+  filter: invert(0.8);
+}
+body:has(#dark-toggle:checked) .btn-round {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+body:has(#dark-toggle:checked) .btn-store {
+  font-weight: 800;
+}
+body:has(#dark-toggle:checked) .navigation-text {
+  color: hsl(0, 0%, 100%);
+}
+body:has(#dark-toggle:checked) .navigation-text:hover {
+  color: hsl(239, 84%, 67%);
+}
+
+.btn-s, .btn-m, .btn-l, .btn-round {
   display: flex;
   width: max-content;
   align-items: center;
   justify-content: center;
   gap: 1em;
+  line-height: 100%;
+}
+
+.btn-s {
   padding: 0.56em 1.25em;
   margin: 0;
   border-radius: 0.25em;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 1.1rem;
 }
 
 .btn-m {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
   padding: 0.68em 1.75em;
   margin: 0;
   border-radius: 0.375em;
   font-size: 0.875rem;
   font-weight: 600;
+  line-height: 100%;
 }
 
 .btn-l {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
   padding: 0.8em 2em;
   margin: 0;
   border-radius: 0.5em;
   font-size: 1rem;
   font-weight: 600;
+  line-height: 100%;
 }
 
 .btn-primary {
@@ -213,8 +244,9 @@ h6 {
 }
 
 .btn-store {
-  color: hsl(225, 100%, 98%);
-  background-color: hsl(223, 39%, 7%);
+  padding-block: 0.4rem;
+  color: var(--clr-background);
+  background-color: var(--clr-heading);
   height: 3.25rem;
 }
 .btn-store img {
@@ -225,12 +257,20 @@ h6 {
   display: block;
 }
 .btn-store-text small:nth-child(1) {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.6rem;
 }
 .btn-store-text small:nth-child(2) {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.3rem;
+}
+
+.btn-round {
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1.3rem;
+  transform: rotate(90deg);
 }
 
 /* Toggle Slider */
@@ -357,9 +397,12 @@ label[for=dark-toggle] {
   grid-template-rows: 1fr auto;
   gap: 2rem;
   padding: 0 1rem;
-  margin-bottom: 2rem;
   text-align: center;
   font-size: 1.1rem;
+}
+
+.btn-store {
+  width: 100%;
 }
 
 .appstore {
@@ -373,6 +416,7 @@ label[for=dark-toggle] {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mobiles {
@@ -392,11 +436,11 @@ label[for=dark-toggle] {
     display: block;
   }
   .btn-store-text small:nth-child(1) {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 0.5rem;
   }
   .btn-store-text small:nth-child(2) {
-    font-weight: 500;
+    font-weight: 800;
     font-size: 0.8rem;
   }
   .showcase {
@@ -413,7 +457,6 @@ label[for=dark-toggle] {
     grid-column: 1/6;
     grid-row: 3/4;
     text-align: left;
-    line-height: 1.8rem;
   }
   .appstore {
     grid-column: 1/6;
@@ -421,6 +464,11 @@ label[for=dark-toggle] {
     display: flex;
     gap: 1rem;
     margin: 2rem 0;
+  }
+  .btn-store {
+    height: 2.5rem;
+    padding: 0.4rem;
+    line-height: 80%;
   }
   .discover-more {
     grid-column: 1/6;
@@ -436,21 +484,22 @@ label[for=dark-toggle] {
 }
 @media (min-width: 1200px) {
   .btn-store {
-    padding: 0.5rem 0.5rem;
+    height: 3.25rem;
+    padding: 0.5rem;
+    line-height: 100%;
   }
   .btn-store-text small {
     display: block;
   }
   .btn-store-text small:nth-child(1) {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 0.6rem;
   }
   .btn-store-text small:nth-child(2) {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.3rem;
   }
   .showcase {
-    margin: 0 auto;
     max-width: 1140px;
   }
   .showcase .display-4 {
