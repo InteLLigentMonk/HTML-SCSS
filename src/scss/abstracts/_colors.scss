@@ -12,6 +12,7 @@ $gray-900: hsl(223, 39%, 7%);
 $black: hsl(0, 0%, 0%);
 
 // Base colors
+$clr-header: rgba(255, 255, 255, 0.3);
 $clr-base: $white;
 $clr-background: $gray-100;
 $clr-secondary: $gray-200;
@@ -24,6 +25,7 @@ $clr-navigation: $gray-800;
 $clr-heading: $gray-900;
 
 :root{
+  --clr-header: #{$clr-header};
   --clr-base: #{$clr-base};
   --clr-background: #{$clr-background};
   --clr-secondary: #{$clr-secondary};

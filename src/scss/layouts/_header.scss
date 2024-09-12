@@ -1,11 +1,17 @@
 @use '../abstracts/' as a;
 @use 'sass:map';
+@use 'sass:color';
+
 
 header{
   @include a.margin-auto;
-  padding: 1rem;
+  padding: 0.5rem;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  background-color: var(--clr-header);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(4px);
 }
 .logo{
   @include a.display(flex, left, center, 0.5rem);

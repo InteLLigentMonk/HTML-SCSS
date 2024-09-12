@@ -51,29 +51,28 @@ h6{
 
 /* Body text styling */
 
+.body-text-lead, .body-text-xl, .body-text-l, .body-text-m,
+.body-text-s, .body-text-xs{
+  font-weight: map-get(a.$Font-weight , normal);
+}
+
 .body-text-lead{
   font-size: map-get(a.$Body-font-sizes , 'Lead');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .body-text-xl{
   font-size: map-get(a.$Body-font-sizes , 'XL');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .body-text-l{
   font-size: map-get(a.$Body-font-sizes , 'L');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .body-text-m{
   font-size: map-get(a.$Body-font-sizes , 'M');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .body-text-s{
   font-size: map-get(a.$Body-font-sizes , 'S');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 .body-text-xs{
   font-size: map-get(a.$Body-font-sizes , 'XS');
-  font-weight: map-get(a.$Font-weight , extrabold);
 }
 
 /* Navigation links styling */
