@@ -40,6 +40,9 @@
 .btn-primary{
   color: c.$clr-background;
   background-color: c.$primary;
+  &:hover{
+    background-color: c.$gradient-3;
+  }
 }
 
 .btn-store{

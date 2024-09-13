@@ -11,7 +11,7 @@ header{
   background-color: var(--clr-header);
   position: sticky;
   top: 0;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
 }
 .logo{
   @include a.display(flex, left, center, 0.5rem);

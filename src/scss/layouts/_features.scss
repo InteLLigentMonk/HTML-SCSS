@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
+  background-color: var(--clr-base);
 }
 
 .feature-card{
@@ -33,7 +34,7 @@
 .symbol-box{
   display: grid;
   place-content: center;
-  background-color: var(--light-bg);
+  background-color: var(--clr-background);
   height: 3.75rem;
   width: 3.75rem;
   border-radius: .5rem;

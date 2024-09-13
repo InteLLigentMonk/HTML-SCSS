@@ -1,0 +1,67 @@
+@use '../abstracts/' as a;
+
+.testimonials-container{
+  background: var(--clr-background);
+}
+.testimonials{
+  display: none;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  .comment-card{
+   position: relative; 
+  }
+  h2{
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+}
+.quote-box{
+  position: absolute;
+  top:-1.5rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  background-color: a.$primary;
+  display: grid;
+  place-content: center;
+  border-radius: .4rem;
+  color: var(--clr-base);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  
+}
+.commentary-wrapper{
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  background-color: var(--clr-base);
+  border-radius: .5rem;
+  padding: 2rem 1rem 1rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.star-outline{
+  color: var(--input-placeholder);
+}
+.star-filled{
+  color: #FFD43B;
+}
+.user{
+  display: flex;
+}
+.user-details{
+  display: block;
+}
+
+@media (min-width: 1200px){
+  .testimonials{
+    display: grid;
+
+    h2{
+      grid-column: 1 / 2;
+    }
+  }
+}

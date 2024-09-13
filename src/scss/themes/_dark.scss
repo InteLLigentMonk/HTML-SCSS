@@ -2,9 +2,9 @@
 @use 'sass:map';
 
 body:has(#dark-toggle:checked){
-  --clr-header: rgb(0, 0, 0, 0.3);
-  --clr-base: #{$gray-900};
-  --clr-background: #{$black};
+  --clr-header: hsla(223, 39%, 7%, 0.3);
+  --clr-base: #{$black};
+  --clr-background: #{$gray-900};
   --clr-divider: #{$gray-800};
   --clr-heading: #{$white};
   --clr-body-text: #{$white};

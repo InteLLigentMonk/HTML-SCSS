@@ -1,0 +1,46 @@
+.app-features-2{
+  display: none;
+}
+.features-2-card{
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  a{
+    display: inline;
+  }
+}
+.features-2-heading{
+  font-size: 2rem;
+  font-weight: 900;
+  padding-bottom: 2rem;
+}
+ul{
+  padding-block: 1rem;
+  list-style: inside url(/img/bx-check-circle.svg);
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+.two-column-grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-block: 1rem;
+}
+
+
+@media(min-width: 1200px){
+  .app-features-2{
+    background-color: var(--clr-base);
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: min-content;
+    gap: 2rem;
+    align-items: center;
+    padding: 5rem;
+  }
+}
