@@ -23,7 +23,6 @@
   right: 0;
   bottom: 0;
   background-color: a.$clr-muted;
-  box-shadow: 0 .4rem 1.3rem a.$clr-muted;
   transition: .4s;
 }
 
@@ -39,6 +38,7 @@
 }
 input:checked + .slider {
   background-color: a.$primary;
+  box-shadow: 0 0 .8rem a.$primary;
 }
 
 input:checked + .slider:before {

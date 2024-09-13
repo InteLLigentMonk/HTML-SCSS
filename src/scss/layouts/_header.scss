@@ -11,6 +11,7 @@ header{
   background-color: var(--clr-header);
   position: sticky;
   top: 0;
+  z-index: 10000;
   backdrop-filter: blur(8px);
 }
 .logo{

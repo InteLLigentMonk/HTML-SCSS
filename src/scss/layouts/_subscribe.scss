@@ -1,0 +1,81 @@
+@use '../abstracts/' as a;
+
+.subscribe{
+  align-items: center;
+  margin: 1rem;
+  padding: 3rem 1rem;
+  background-color: var(--clr-background);
+  border-radius: .5rem;
+}
+
+.newsletter-logo{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+#subscribe-desktop{
+  display: none;
+}
+
+.newsletter{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mail-icon{
+  display: flex;
+  align-items: center;
+  color: var(--clr-placeholder);
+  background-color: a.$clr-base;
+  height: 3rem;
+  padding-inline: 1rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+input{
+  border: 0;
+  color: var(--clr-muted);
+  height: 3rem;
+  margin-block: .6rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+  width: calc(100%);
+}
+input::placeholder{
+  color: var(--clr-placeholder)
+}
+input:focus{
+  outline: none;
+}
+input[type="submit"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min-content;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 1rem 1.5rem;
+  border-radius: 0 .3rem .3rem 0;
+}
+
+@media (min-width: 768px){
+  .subscribe{
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 500px));
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px){
+  .subscribe{
+    max-width: 1140px;
+  }
+  #subscribe-desktop{
+    display: block;
+  }
+}

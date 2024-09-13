@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as v;
+
 @mixin margin-auto{
   margin: 0 auto;
 }
@@ -7,4 +9,19 @@
   justify-content: $justify;
   align-items: $align;
   gap: $gap;
+}
+
+@mixin shadow($size){
+  @if $size == s {
+    box-shadow: v.$shadow-s;
+  } @else if $size == m {
+    box-shadow: v.$shadow-m;
+  } @else if $size == l {
+    box-shadow: v.$shadow-l;
+  } @else if $size == primary-btn {
+    box-shadow: v.$shadow-primary-btn;
+  } @else if $size == secondary-btn {
+    box-shadow: v.$shadow-secondary-btn;
+  }
+
 }

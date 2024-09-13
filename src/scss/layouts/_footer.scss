@@ -1,0 +1,14 @@
+@use '../abstracts/' as a;
+
+footer{
+  display: grid;
+  place-content: center;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+@media (min-width: 768px){
+  .footer{
+    @include a.display(flex, center, center, 1rem);
+  }
+}
