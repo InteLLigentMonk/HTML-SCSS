@@ -53,10 +53,6 @@ table {
   border-spacing: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 :root {
   --clr-header: hsla(225, 100%, 98%, 0.3);
   --clr-base: hsl(0, 0%, 100%);
@@ -69,6 +65,10 @@ a {
   --clr-body-text: hsl(234, 14%, 39%);
   --clr-navigation: hsl(235, 20%, 25%);
   --clr-heading: hsl(223, 39%, 7%);
+}
+
+a {
+  text-decoration: none;
 }
 
 * {
@@ -214,6 +214,7 @@ body:has(#dark-toggle:checked) #accordion li {
   justify-content: center;
   gap: 1em;
   line-height: 100%;
+  border: none;
 }
 
 .btn-s {
@@ -310,8 +311,15 @@ body:has(#dark-toggle:checked) #accordion li {
 }
 
 .slider:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: #dbc900;
   position: absolute;
-  content: "";
+  content: "\f185";
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 1.2rem;
   width: 1.2rem;
   left: 0.3rem;
@@ -327,6 +335,8 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(1.2rem);
+  content: "\f186";
+  color: hsl(239, 84%, 67%);
 }
 
 .slider.round {
@@ -335,6 +345,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+body {
+  position: relative;
 }
 
 header {
@@ -347,6 +361,10 @@ header {
   top: 0;
   z-index: 10000;
   backdrop-filter: blur(8px);
+}
+
+.show {
+  display: block;
 }
 
 .logo {
@@ -378,6 +396,70 @@ label[for=dark-toggle] {
   display: none;
 }
 
+.mobile-nav {
+  display: none;
+  justify-content: right;
+  width: 15rem;
+  position: absolute;
+  top: 4.5rem;
+  padding: 1rem;
+  margin-right: 0.6rem;
+  background-color: hsl(from var(--clr-background) h s l/80%);
+  border: 1px solid var(--clr-placeholder);
+  border-radius: 1rem;
+}
+.mobile-nav #login {
+  display: block;
+  box-shadow: 0 4.4px 12px rgba(19, 16, 34, 0.2);
+}
+.mobile-nav input {
+  font-size: 1rem;
+  outline: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--clr-placeholder);
+  box-shadow: 0 4.4px 12px rgba(19, 16, 34, 0.08);
+}
+.mobile-nav input:focus {
+  box-shadow: 0 0 12px hsl(239, 84%, 67%);
+}
+
+.mobile-nav-button {
+  padding: 0rem;
+  fill: var(--clr-body-text);
+  background-color: transparent;
+  border: none;
+  display: grid;
+  place-content: center;
+}
+
+.mobile-nav-button[aria-expanded=false] .line {
+  transition: y 200ms ease-in 200ms, opacity 0ms 200ms, rotate 200ms ease-in;
+  transform-origin: center;
+}
+
+.mobile-nav-button[aria-expanded=true] .line {
+  transition: y 200ms ease-in, opacity 0ms 200ms, rotate 200ms ease-in 200ms;
+  transform-origin: center;
+}
+
+.mobile-nav-button[aria-expanded=true] :is(.top-bar, .bottom-bar) {
+  y: 45;
+}
+
+.mobile-nav-button[aria-expanded=true] .top-bar {
+  rotate: 45deg;
+}
+
+.mobile-nav-button[aria-expanded=true] .middle-bar {
+  opacity: 0;
+}
+
+.mobile-nav-button[aria-expanded=true] .bottom-bar {
+  rotate: -45deg;
+}
+
 @media (width > 768px) {
   header {
     max-width: 720px;
@@ -390,7 +472,7 @@ label[for=dark-toggle] {
   header {
     max-width: 1140px;
   }
-  .hamburger {
+  .mobile-nav-button {
     display: none;
   }
   .features {
@@ -401,6 +483,9 @@ label[for=dark-toggle] {
   }
   label[for=dark-toggle] {
     display: inline;
+  }
+  .mobile-nav {
+    display: none;
   }
 }
 .showcase-container {
@@ -415,6 +500,10 @@ label[for=dark-toggle] {
   padding: 0 1rem;
   text-align: center;
   font-size: 1.1rem;
+}
+
+#showcase-headline {
+  font-size: 2.5rem;
 }
 
 .btn-store {
@@ -444,6 +533,9 @@ label[for=dark-toggle] {
 }
 
 @media (min-width: 768px) {
+  #showcase-headline {
+    font-size: 3.5rem;
+  }
   .btn-store {
     width: 50%;
     padding: 0.5rem 0.3rem;
@@ -1064,7 +1156,7 @@ ul {
   border-radius: 0.3rem 0 0 0.3rem;
 }
 
-input {
+.newsletter input {
   border: 0;
   color: var(--clr-muted);
   height: 3rem;
@@ -1073,19 +1165,20 @@ input {
   width: 100%;
 }
 
-input::placeholder {
+.newsletter input::placeholder {
   color: var(--clr-placeholder);
 }
 
-input:focus {
+.newsletter input:focus {
   outline: none;
 }
 
-input[type=submit] {
+.newsletter input[type=submit] {
   position: absolute;
   top: 0;
   right: 0;
   width: min-content;
+  color: hsl(0, 0%, 100%);
   font-size: 1rem;
   font-weight: 300;
   padding: 1rem 1.5rem;

@@ -2,6 +2,9 @@
 @use 'sass:map';
 @use 'sass:color';
 
+body{
+  position: relative;
+}
 
 header{
   @include a.margin-auto;
@@ -14,6 +17,10 @@ header{
   z-index: 10000;
   backdrop-filter: blur(8px);
 }
+.show{
+  display: block;
+}
+
 .logo{
   @include a.display(flex, left, center, 0.5rem);
 }
@@ -37,6 +44,75 @@ label[for="dark-toggle"]{
   display: none;
 }
 
+  
+.mobile-nav{
+  display: none;
+  justify-content: right;
+  width: 15rem;
+  position: absolute;
+  top: 4.5rem;
+  padding: 1rem;
+  margin-right: 0.6rem;
+  background-color: hsl(from var(--clr-background) h s l / 80%);
+  border: 1px solid var(--clr-placeholder);
+  border-radius: 1rem;
+  #login{
+    display: block;
+    box-shadow: a.$shadow-primary-btn;
+  }
+  input{
+    font-size: 1rem;
+    outline: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--clr-placeholder); 
+    box-shadow: a.$shadow-s;
+  }
+  
+  input:focus{
+    box-shadow: 0 0 12px a.$primary;
+  }
+}
+
+.mobile-nav-button{
+  padding: 0rem;
+  fill: var(--clr-body-text);
+  background-color: transparent;
+  border: none;
+  display: grid;
+  place-content: center;
+}
+.mobile-nav-button[aria-expanded='false'] .line{
+  transition: 
+    y 200ms ease-in 200ms,
+    opacity 0ms 200ms,
+    rotate 200ms ease-in ;
+  transform-origin: center;
+}
+
+.mobile-nav-button[aria-expanded='true'] .line{
+  transition: 
+    y 200ms ease-in,
+    opacity 0ms 200ms,
+    rotate 200ms ease-in 200ms;
+    transform-origin: center;
+}
+
+.mobile-nav-button[aria-expanded='true'] :is(.top-bar, .bottom-bar){
+  y: 45;
+}
+.mobile-nav-button[aria-expanded='true'] .top-bar{
+  rotate: 45deg;
+}
+.mobile-nav-button[aria-expanded='true'] .middle-bar{
+  opacity: 0;
+}
+.mobile-nav-button[aria-expanded='true'] .bottom-bar{
+  rotate: -45deg;
+}
+
+
 @media(width > 768px){
   header{
     max-width: 720px;
@@ -50,7 +126,7 @@ label[for="dark-toggle"]{
   header{
     max-width: 1140px;
   }
-  .hamburger{
+  .mobile-nav-button{
     display: none;
   }
   .features{
@@ -61,5 +137,8 @@ label[for="dark-toggle"]{
   }
   label[for="dark-toggle"]{
     display: inline;
+  }
+  .mobile-nav{
+    display: none;
   }
 }

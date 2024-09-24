@@ -21,8 +21,25 @@
         <input type="checkbox" id="dark-toggle">
         <span class="slider round"></span>
       </label>
-      <div class="hamburger">
-        <i class="fa-solid fa-bars fa-xl"></i>
+      <button class="mobile-nav-button" aria-expanded="false">
+        <svg id="hamburger" class="hamburger" viewbox="0 0 100 100" width="2rem">
+          <rect class="line top-bar" width="70" height="10" x="15" y="25" rx="5"></rect>
+          <rect class="line middle-bar" width="70" height="10" x="15" y="45" rx="5"></rect>
+          <rect class="line bottom-bar" width="70" height="10" x="15" y="65" rx="5"></rect>
+        </svg>
+      </button>
+      <div id="mobile-nav1" class="mobile-nav">
+        <form action="#" class="signin">
+          <label for="username"></label>
+          <input type="text" name="username" id="username" placeholder="Username / E-mail">
+          <label for="password"></label>
+          <input type="password" name="password" id="password" placeholder="Password">
+          <button id="login" class="btn-s btn-primary">
+            <i class="fa-regular fa-user"></i>
+            <span>Sign in</span>
+          </button>
+          <a href="#" class=" body-text-xs">not a member?</a>
+        </form>
       </div>
       <a href="#" class="btn-s btn-primary">
         <i class="fa-regular fa-user"></i>
@@ -32,7 +49,7 @@
   </header>
   <div class="showcase-container">
     <section class="showcase">
-      <div class="display-4">
+      <div class="display-4" id="showcase-headline">
         Manage All Your<br>
         Money in One App
       </div>
@@ -56,7 +73,7 @@
           </div>
         </a>
       </div>
-      <div class="discover-more">
+      <div class="discover-more body-text-s">
         <div class="btn-round">
           >
         </div>
@@ -327,7 +344,6 @@
       </div>
     </div>
   </section>
-
   <section class="subscribe">
     <div class="newsletter-logo">
       <figure>
@@ -348,7 +364,6 @@
       <small>© 2024 Silicon. All rights reserved.</small>
       <small>Credit MadrasThemes</small>
     </footer>
-
-
+    <script src="/main.0ab05bb7.js"></script>
 </body>
 </html>

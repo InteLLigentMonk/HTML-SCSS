@@ -1,4 +1,5 @@
 @use '../abstracts/' as a;
+@use 'sass:map';
 
 .showcase-container{
   background: radial-gradient(circle at center bottom, rgba(a.$primary, .15) 0%, rgba(a.$gradient-2, .1) 42%, rgba(a.$gradient-3, .0) 83%);
@@ -12,6 +13,10 @@
   padding: 0 1rem;
   text-align: center;
   font-size: 1.1rem;
+}
+
+#showcase-headline{
+  font-size: map-get(a.$Heading-font-sizes , 1);
 }
 
 .btn-store{
@@ -39,6 +44,9 @@
 }
 
 @media (min-width: 768px){
+  #showcase-headline{
+    font-size: map-get(a.$Display-font-sizes , 4);
+  }
 
   .btn-store{
     width: 50%;

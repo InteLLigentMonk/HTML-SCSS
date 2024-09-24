@@ -27,8 +27,15 @@
 }
 
 .slider:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: .9rem;
+  color: #dbc900;
   position: absolute;
-  content: "";
+  content: "\f185";
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 1.2rem;
   width: 1.2rem;
   left: .3rem;
@@ -43,6 +50,8 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(1.2rem);
+  content: "\f186";
+  color: a.$primary;
 }
 
 .slider.round {
