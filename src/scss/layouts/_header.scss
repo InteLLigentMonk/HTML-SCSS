@@ -17,9 +17,6 @@ header{
   z-index: 10000;
   backdrop-filter: blur(8px);
 }
-.show{
-  display: block;
-}
 
 .logo{
   @include a.display(flex, left, center, 0.5rem);

@@ -363,10 +363,6 @@ header {
   backdrop-filter: blur(8px);
 }
 
-.show {
-  display: block;
-}
-
 .logo {
   display: flex;
   justify-content: left;
