@@ -30,9 +30,10 @@
 
 }
 
+
 .discover-more{ 
   @include a.display(flex, center, center, 1rem);
-  margin-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .mobiles{

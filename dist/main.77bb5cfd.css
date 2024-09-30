@@ -180,6 +180,16 @@ h6 {
   color: hsl(239, 84%, 67%);
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 body:has(#dark-toggle:checked) {
   --clr-header: hsla(223, 39%, 7%, 0.3);
   --clr-base: hsl(0, 0%, 0%);
@@ -517,7 +527,7 @@ label[for=dark-toggle] {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .mobiles {
